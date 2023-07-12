@@ -39,10 +39,24 @@ async def search_company(company: Company):
         extracted_data = []
         for entity in response_data['entities']:
             extracted_entity = {
-                'company_name': entity['properties'].get('name', None),
-                'description': entity['properties'].get('short_description', None),
-                'website_url': entity['properties'].get('website_url', None),
+                'created_at': entity['properties'].get('created_at', None),
+                'entity_def_id': entity['properties'].get('entity_def_id', None),
+                'facebook': entity['properties'].get('facebook', None),
+                'facet_ids': entity['properties'].get('facet_ids', None),
+                'identifier': entity['properties'].get('identifier', None),
+                'image_id': entity['properties'].get('image_id', None),
                 'image_url': entity['properties'].get('image_url', None),
+                'linkedin': entity['properties'].get('linkedin', None),
+                'location_identifiers': entity['properties'].get('location_identifiers', None),
+                'name': entity['properties'].get('name', None),
+                'permalink': entity['properties'].get('permalink', None),
+                'short_description': entity['properties'].get('short_description', None),
+                'stock_exchange_symbol': entity['properties'].get('stock_exchange_symbol', None),
+                'stock_symbol': entity['properties'].get('stock_symbol', None),
+                'twitter': entity['properties'].get('twitter', None),
+                'updated_at': entity['properties'].get('updated_at', None),
+                'uuid': entity['properties'].get('uuid', None),
+                'website': entity['properties'].get('website', None),
             }
             extracted_data.append(extracted_entity)
         # Convert the extracted data to a JSON string
